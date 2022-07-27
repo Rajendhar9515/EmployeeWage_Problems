@@ -4,10 +4,10 @@ public class EmployeeWage {
 	public static final int isPartTime = 1;
 	public static final int isFullTime = 2;
 	public static final int empRatePerHr = 20;
-	public static final int numOfWorkingDays = 1;
+	public static final int numOfWorkingDays = 2;
 	public static final int maxHrsInMonth = 10;
 
-	public static void main(String[] args) {
+	public static int computeEmpWage() {
 		int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
 		while (totalEmpHrs <= maxHrsInMonth && totalWorkingDays < numOfWorkingDays) {
 			totalWorkingDays++;
@@ -23,9 +23,15 @@ public class EmployeeWage {
 				empHrs = 0;
 			}
 			totalEmpHrs += empHrs;
-			System.out.println("Day#: " + totalWorkingDays + " empHr:" + empHrs);
+			System.out.println("Day#: " + totalWorkingDays + " EmpHr: " + empHrs);
 		}
-		int totalempWage = totalEmpHrs + empRatePerHr;
-		System.out.println("Total empWage: " + totalempWage);
+		int totalEmpWage = totalEmpHrs * empRatePerHr;
+		System.out.println("Total Emp Wage: " + totalEmpWage);
+		return totalEmpWage;
+	}
+
+	public static void main(String[] args) {
+		computeEmpWage();
+
 	}
 }
