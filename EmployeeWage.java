@@ -54,6 +54,10 @@ public class EmployeeWage implements interface_companyEmpWage {
 			totalEmpHrs += empHrs;
 			empWage = totalEmpHrs * companyEmpWage.empRatePerHr;
 			companyEmpWage.totalEmpWage = companyEmpWage.totalEmpWage + empWage;
+
+			// storing daily wage along with total wage.
+			System.out.println(companyEmpWage.companyName + " DAY-" + numOfDays + " wage:- " + empWage
+					+ " and employee hours :- " + empHrs);
 		}
 		return companyEmpWage.totalEmpWage; // returning total employee wage
 	}
