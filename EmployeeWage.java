@@ -3,13 +3,10 @@ package com.bridgelabz.employeewage;
 public class EmployeeWage {
 	public static final int isPartTime = 1;
 	public static final int isFullTime = 2;
-	public static final int empRatePerHr = 20;
-	public static final int numOfWorkingDays = 2;
-	public static final int maxHrsInMonth = 10;
 
-	public static int computeEmpWage() {
+	public static int computeEmpWage(String company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth) {
 		int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
-		while (totalEmpHrs <= maxHrsInMonth && totalWorkingDays < numOfWorkingDays) {
+		while (totalEmpHrs <= maxHoursPerMonth && totalWorkingDays < numOfWorkingDays) {
 			totalWorkingDays++;
 			int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 			switch (empCheck) {
@@ -22,16 +19,16 @@ public class EmployeeWage {
 			default:
 				empHrs = 0;
 			}
-			totalEmpHrs += empHrs;
-			System.out.println("Day#: " + totalWorkingDays + " EmpHr: " + empHrs);
+			totalEmpHrs = totalEmpHrs + empHrs;
+			System.out.println("Day#: " + totalWorkingDays + "EmpHr: " + empHrs);
 		}
-		int totalEmpWage = totalEmpHrs * empRatePerHr;
-		System.out.println("Total Emp Wage: " + totalEmpWage);
+		int totalEmpWage = totalEmpHrs * empRatePerHour;
+		System.out.println("Total Emp Wage for Company: " + company + " is: " + totalEmpWage);
 		return totalEmpWage;
 	}
 
 	public static void main(String[] args) {
-		computeEmpWage();
-
+		computeEmpWage("DMart", 20, 2, 10);
+		computeEmpWage("Reliance", 10, 4, 20);
 	}
 }
