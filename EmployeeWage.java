@@ -1,23 +1,25 @@
 package com.bridgelabz.employeewage;
 
 public class EmployeeWage {
+	public static final int isPartTime = 1;
+	public static final int isFullTime = 2;
+	public static final int empRatePerHr = 20;
+
 	public static void main(String[] args) {
-		int isPartTime = 1;
-		int isFullTime = 2;
-		int empRatePerHr = 20;
-		int empWage = 0;
 		int empHrs = 0;
-		double empCheck = Math.floor(Math.random() * 10) % 3;
-		if (empCheck == isFullTime) {
-			empHrs = 8;
-		} else if (empCheck == isPartTime) {
+		int empWage = 0;
+		int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+		switch (empCheck) {
+		case isPartTime:
 			empHrs = 4;
-		} else {
+			break;
+		case isFullTime:
+			empHrs = 8;
+			break;
+		default:
 			empHrs = 0;
 		}
-		empWage = (empHrs * empRatePerHr);
-		System.out.println("EmpWage :" + empWage);
-
+		empWage = empHrs * empRatePerHr;
+		System.out.println("EmpWage : " + empWage);
 	}
-
 }
