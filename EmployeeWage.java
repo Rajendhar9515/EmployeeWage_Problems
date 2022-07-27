@@ -61,4 +61,18 @@ public class EmployeeWage implements interface_companyEmpWage {
 		}
 		return companyEmpWage.totalEmpWage; // returning total employee wage
 	}
+
+	// Ability to get total wage when queried by company.
+	public void getTotalWage(String companyName) {
+		for (int i = 0; i < companyEmpWageArray.size(); i++) {
+			String name = companyEmpWageArray.get(i).companyName;
+			if (name.equals(companyName)) {
+				int totalWage = companyEmpWageArray.get(i).totalEmpWage;
+				System.out.println(companyName + " employee total wage :- " + totalWage);
+				break;
+			} else {
+				continue;
+			}
+		}
+	}
 }

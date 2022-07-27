@@ -14,5 +14,7 @@ public class Main_Class_EmployeeWage {
 
 		obj.computationOfEmpWage(); // calling method for computation.
 
+		// get total wage when queried by company
+		obj.getTotalWage("BridgeLabz");
 	}
 }

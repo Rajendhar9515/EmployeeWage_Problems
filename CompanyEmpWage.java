@@ -2,10 +2,15 @@ package com.bridgelabz.employeewage;
 
 //creating interface 
 interface interface_companyEmpWage {
+
+	// declaring method
 	public abstract void addCompanyEmpWage(String companyName, int totalWorkingDays, int maxHrsPerMonth,
 			int empRatePerHr);
 
-	public abstract void computationOfEmpWage();
+	public void computationOfEmpWage();
+
+	// declared method to get total wage when company queried.
+	public void getTotalWage(String company);
 }
 
 public class CompanyEmpWage {
