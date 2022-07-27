@@ -1,6 +1,6 @@
 package com.bridgelabz.employeewage;
 
-public class EmployeeWage {
+public class EmployeeWage implements interface_companyEmpWage {
 	/* Constant Variables. */
 	final int isFullTime = 2;
 	final int isPartTime = 1;

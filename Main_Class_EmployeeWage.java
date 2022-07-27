@@ -5,12 +5,12 @@ public class Main_Class_EmployeeWage {
 		System.out.println("WELCOME TO EMPLOYEE WAGE COMPUTATION PROGRAM.\n");
 
 		// creating object of employeeWage class.
-		EmployeeWage obj = new EmployeeWage();
+		interface_companyEmpWage obj = new EmployeeWage();
 
 		// adding companies into an array
-		obj.addCompanyEmpWage("BridgeLabz", 20, 100, 40);
-		obj.addCompanyEmpWage("Tech-Mahindra", 22, 90, 30);
-		obj.addCompanyEmpWage("Infosys", 25, 80, 20);
+		obj.addCompanyEmpWage("BridgeLabz", 30, 100, 50);
+		obj.addCompanyEmpWage("Tech-Mahindra", 25, 80, 40);
+		obj.addCompanyEmpWage("Infosys", 35, 90, 45);
 
 		obj.computationOfEmpWage(); // calling method for computation.
 
